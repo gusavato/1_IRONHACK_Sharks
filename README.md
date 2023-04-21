@@ -6,6 +6,7 @@
 ## Descripción del proyecto
 
 Limpieza dataframe sharks. Primer proyecto dentro del bootcam IRONHACK Abril 2022
+Las versiones de las distintas librerías usadas en el proyecto se pueden locarlizar en el archivo requirements.txt
 
 ## DafaFrame 
 
