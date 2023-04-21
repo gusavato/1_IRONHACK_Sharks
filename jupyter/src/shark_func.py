@@ -28,7 +28,7 @@ def check_nan_cols(df: pd.DataFrame(),
     if method == 'sum':
         nan_cols = df.isna().sum()
     elif method == 'avg':
-        nan_cols = df.isna().mean()
+        nan_cols = round(df.isna().mean()*100, 2)
     if disp == True:
         display(nan_cols[nan_cols > 0])
 
