@@ -54,5 +54,6 @@ def cols_info(df: pd.DataFrame) -> int:
             lambda x: type(x) == np.datetime64)].shape[0]
         info['float==nan'] = info['Nulos'] == info['float']
         info['unique'] = df[col].unique().size
+        info['unique %'] = round(info['unique'] / df.shape[0] * 100, 2)
         cols_info[col] = info
     return pd.DataFrame(cols_info).T
