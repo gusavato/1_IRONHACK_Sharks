@@ -57,3 +57,23 @@ def cols_info(df: pd.DataFrame) -> int:
         info['unique %'] = round(info['unique'] / df.shape[0] * 100, 2)
         cols_info[col] = info
     return pd.DataFrame(cols_info).T
+
+
+def count_nan_row(df: pd.DataFrame, n_nan=1) -> list:
+    """
+    Función que recibe un dataframe, y devuelve una lista con el índice de las
+    filas que tienen un número de nulos >= n_nan
+    """
+
+    nan_index = []
+
+    for fila in df.itertuples():
+        count = 0
+        for e in fila:
+            if e is np.nan:
+                count += 1
+
+        if count >= n_nan:
+            nan_index.append(fila[0])
+
+    return nan_index
