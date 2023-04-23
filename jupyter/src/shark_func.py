@@ -33,3 +33,26 @@ def check_nan_cols(df: pd.DataFrame(),
         display(nan_cols[nan_cols > 0])
 
     return nan_cols
+
+
+def cols_info(df: pd.DataFrame) -> int:
+    """
+    Devulve información detallada de cada columna
+    """
+    cols_info = dict()
+    for col in df:
+        info = dict()
+        info['Col Type'] = df[col].dtype
+        info['Nulos'] = int(check_nan_cols(df[col], disp=False))
+        info['str'] = df[col][df[col].apply(lambda x: type(x) == str)].shape[0]
+        info['float'] = df[col][df[col].apply(
+            lambda x: type(x) == float)].shape[0]
+        info['int'] = df[col][df[col].apply(lambda x: type(x) == int)].shape[0]
+        info['bool'] = df[col][df[col].apply(
+            lambda x: type(x) == bool)].shape[0]
+        info['date'] = df[col][df[col].apply(
+            lambda x: type(x) == np.datetime64)].shape[0]
+        info['float==nan'] = info['Nulos'] == info['float']
+        info['unique'] = df[col].unique().size
+        cols_info[col] = info
+    return pd.DataFrame(cols_info).T
