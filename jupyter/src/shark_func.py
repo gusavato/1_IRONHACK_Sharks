@@ -77,3 +77,30 @@ def count_nan_row(df: pd.DataFrame, n_nan=1) -> list:
             nan_index.append(fila[0])
 
     return nan_index
+
+def group_fatal(x):
+    """
+    Función para formatear correctamente la columna Fatal (Y/N)
+    """
+    try:    # El bloque try, es por si encuentra un Nan y que no rompa
+        if x.strip().upper() == 'N':
+            return 'N'
+        elif x.strip().upper() == 'Y':
+            return 'Y'
+        else:
+            return x
+    except:
+        return x
+    
+
+def group_sex(x):
+    """
+    Función para formatear correctamente la columna Sex
+    """
+    try:    # El bloque try, es por si encuentra un Nan y que no rompa
+        if x.strip().upper() == 'M':
+            return 'M'
+        else:
+            return x
+    except:
+        return x
