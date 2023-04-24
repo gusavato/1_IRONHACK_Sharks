@@ -104,3 +104,31 @@ def group_sex(x):
             return x
     except:
         return x
+    
+def age_str_to_string(x):
+    """
+    Función para convertir a entero todos los campos que así lo permitan
+    dentro de la columna age
+    """
+    try:
+        int(x)
+        return int(x)
+    except:
+        return x
+    
+def group_activity(x):
+    try:    # El bloque try, es por si encuentra un Nan y que no rompa
+        if 'surf' in x.lower():
+            return 'Surfing'
+        elif 'diving' in x.lower():
+            return 'Diving'
+        elif 'fish' in x.lower():
+            return 'Fishing'
+        elif 'swim' in x.lower():
+            return 'Swimming'
+        elif 'board' in x.lower():
+            return 'Boarding'
+        else:
+            return x
+    except:
+        return x    
