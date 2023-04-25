@@ -1,6 +1,6 @@
 # 1_IRONHACK_Sharks
 
-![sharks](images/sharks.jfif)
+![sharks](images\tiburoncartel.webp)
 
 
 ## Descripción del proyecto
@@ -10,7 +10,7 @@ Las versiones de las distintas librerías usadas en el proyecto se pueden locarl
 
 ## DafaFrame 
 
-- attacks.csv (oculto)
+- attacks.csv
 - Dimensiones: (25723, 24)
 
 ## Restricciones
@@ -21,7 +21,7 @@ Las versiones de las distintas librerías usadas en el proyecto se pueden locarl
 ## Archivos
 
 - `main.ipynb`, que contienge el código a ejecutar.
-- `draft.ipynb`, con contiene pruebas y trozos de código en sucio.
+- `shark_func.py`, que contine funciones usadas en main.ipynb.
 
 ## Recursos
 
