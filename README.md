@@ -1,7 +1,7 @@
 # 1_IRONHACK_Sharks
 
 
-![sharks](images\jaws.jpg)
+![sharks](./images/jaws.jpg)
 
 
 ## Descripción del proyecto
