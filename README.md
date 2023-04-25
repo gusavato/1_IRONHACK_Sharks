@@ -1,6 +1,6 @@
 # 1_IRONHACK_Sharks
 
-![sharks](images\tiburoncartel.webp)
+![sharks](images\jaws.jpg)
 
 
 ## Descripción del proyecto
