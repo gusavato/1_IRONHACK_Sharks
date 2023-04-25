@@ -11,6 +11,7 @@ del dataframe attacks.csv ubicado en la carpeta data
 """
 import pandas as pd
 import numpy as np
+import re
 
 
 def check_nan_cols(df: pd.DataFrame(),
@@ -132,3 +133,36 @@ def group_activity(x):
             return x
     except:
         return x    
+    
+def group_time(x):
+    """
+    Función que se encarga de examinar la cadena de texto recogida en Time.
+    Si el patrón de número + h + número se detecta, compara valores para 
+    asignar un momento del día
+    """
+    patron = r'\dh\d'
+    try:    # El bloque try, es por si encuentra un Nan y que no rompa
+        if re.findall(patron,x):
+            if 9 < int(x[:2]) <= 14:
+                return 'Morning'
+            elif 14 < int(x[:2]) <= 21:
+                return 'Afternoon'
+            elif (21 < int(x[:2]) <= 23) or (0 <= int(x[:2]) <= 9):
+                return 'Night'
+            else:
+                return x
+    except:
+        return x   
+    
+def check_ques(x):
+    """
+    Función que chequea las instancias de Species, que nos indican que los 
+    ataque son cuestionados
+    """
+    try:
+        if 'quest' in x.lower():
+            return True
+        else:
+            return False
+    except:
+        return False
